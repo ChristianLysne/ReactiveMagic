@@ -7,7 +7,9 @@
 //
 
 import XCTest
+import RxSwift
 @testable import ReactiveMagic
+
 
 class ReactiveMagicTests: XCTestCase {
     
@@ -21,16 +23,22 @@ class ReactiveMagicTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testMovieService() {
+        
+        let expectation = expectationWithDescription("Get Movie Count")
+        
+        let movieService = MovieService()
+        let numberOfMovies = movieService.searchMovies("a")
+        
+        var retrievedMovieCount = 0
+        let _ = numberOfMovies.subscribeNext { (movieCount: Int) in
+            retrievedMovieCount = movieCount
+            expectation.fulfill()
         }
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) -> Void in
+            XCTAssertTrue(retrievedMovieCount > 0)
+        })
     }
     
 }
