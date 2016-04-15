@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A426A9151CC10F0400566D34 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426A9141CC10F0400566D34 /* MovieService.swift */; };
+		A426A9171CC114A200566D34 /* SearchMovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426A9161CC114A200566D34 /* SearchMovieViewModelTests.swift */; };
+		A426A9191CC1152D00566D34 /* SearchMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A426A9181CC1152D00566D34 /* SearchMovieViewModel.swift */; };
 		A487A3D21CC0F8A7004646F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A3D11CC0F8A7004646F6 /* AppDelegate.swift */; };
 		A487A3D41CC0F8A7004646F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A3D31CC0F8A7004646F6 /* ViewController.swift */; };
 		A487A3D71CC0F8A7004646F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A487A3D51CC0F8A7004646F6 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		51FA21B1C44AA24A660479D9 /* Pods-ReactiveMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveMagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveMagic/Pods-ReactiveMagic.debug.xcconfig"; sourceTree = "<group>"; };
 		A426A9141CC10F0400566D34 /* MovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		A426A9161CC114A200566D34 /* SearchMovieViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModelTests.swift; sourceTree = "<group>"; };
+		A426A9181CC1152D00566D34 /* SearchMovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModel.swift; sourceTree = "<group>"; };
 		A487A3CE1CC0F8A7004646F6 /* ReactiveMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A487A3D11CC0F8A7004646F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A487A3D31CC0F8A7004646F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				A487A3D11CC0F8A7004646F6 /* AppDelegate.swift */,
 				A487A3D31CC0F8A7004646F6 /* ViewController.swift */,
 				A426A9141CC10F0400566D34 /* MovieService.swift */,
+				A426A9181CC1152D00566D34 /* SearchMovieViewModel.swift */,
 				A487A3D51CC0F8A7004646F6 /* Main.storyboard */,
 				A487A3D81CC0F8A7004646F6 /* Assets.xcassets */,
 				A487A3DA1CC0F8A7004646F6 /* LaunchScreen.storyboard */,
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A487A3E61CC0F8A7004646F6 /* ReactiveMagicTests.swift */,
+				A426A9161CC114A200566D34 /* SearchMovieViewModelTests.swift */,
 				A487A3E81CC0F8A7004646F6 /* Info.plist */,
 			);
 			path = ReactiveMagicTests;
@@ -337,6 +343,7 @@
 				A426A9151CC10F0400566D34 /* MovieService.swift in Sources */,
 				A487A3D41CC0F8A7004646F6 /* ViewController.swift in Sources */,
 				A487A3D21CC0F8A7004646F6 /* AppDelegate.swift in Sources */,
+				A426A9191CC1152D00566D34 /* SearchMovieViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A487A3E71CC0F8A7004646F6 /* ReactiveMagicTests.swift in Sources */,
+				A426A9171CC114A200566D34 /* SearchMovieViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

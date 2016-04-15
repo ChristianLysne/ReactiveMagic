@@ -27,7 +27,7 @@ class ReactiveMagicTests: XCTestCase {
         
         let expectation = expectationWithDescription("Get Movie Count")
         
-        let movieService = MovieService()
+        let movieService = HardcodedMovieService()
         let numberOfMovies = movieService.searchMovies("a")
         
         var retrievedMovieCount = 0

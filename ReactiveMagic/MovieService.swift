@@ -8,24 +8,43 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-class MovieService {
+protocol MovieService {
+    func searchMovies(searchText: String) -> Observable<Int>
+}
+
+class HardcodedMovieService: MovieService {
+    
+    private let urlSession = NSURLSession.sharedSession()
+    
     func searchMovies(searchText: String) -> Observable<Int> {
         return Observable.create({ (observer) -> Disposable in
             
-            let cancel = AnonymousDisposable {
-            }
+            let urlRequest = NSURLRequest(URL: NSURL(string: "http://www.imdb.com")!)
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue(), {
-                if cancel.disposed {
+            let task = self.urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) in
+                guard let response = response, _ = data else {
+                    observer.on(.Error(error ?? RxCocoaURLError.Unknown))
                     return
                 }
-                observer.on(.Next(1))
-                observer.onCompleted()
-            })
+                
+                guard let _ = response as? NSHTTPURLResponse else {
+                    observer.on(.Error(RxCocoaURLError.NonHTTPResponse(response: response)))
+                    return
+                }
+                
+//                observer.on(.Next(data, httpResponse))
+                observer.onNext(Int(arc4random()%100))
+                observer.on(.Completed)
+            }
             
-            return cancel
+            task.resume()
+            
+            return AnonymousDisposable {
+                task.cancel()
+            }
         })
     }
 }
+
